@@ -13,22 +13,22 @@ describe('AngularSteps', function () {
 
     function createView(scope) {
         scope.referenceCurrentStep = null;
-        var element = angular.element('<steps on-finish="finishedSteps()" current-step="referenceCurrentStep" ng-init="msg = 14" >'
-                + '    <step name="Starting">'
+        var element = angular.element('<obm-steps on-finish="finishedSteps()" current-step="referenceCurrentStep" ng-init="msg = 14" >'
+                + '    <obm-step name="Starting">'
                 + '        <h1>This is the first step</h1>'
                 + '        <p>Here you can use whatever you want. You can use other directives, binding, etc.</p>'
                 + '        <input type="submit" step-next value="Continue" />'
-                + '    </step>'
-                + '    <step name="Continuing">'
+                + '    </obm-step>'
+                + '    <obm-step name="Continuing">'
                 + '        <h1>Continuing</h1>'
                 + '        <p>You have continued here!</p>'
                 + '        <input type="submit" step-next value="Go on" />'
-                + '    </step>'
-                + '    <step name="More steps">'
+                + '    </obm-step>'
+                + '    <obm-step name="More steps">'
                 + '        <p>Even more steps!!</p>'
                 + '        <input type="submit" step-next value="Finish now" />'
-                + '    </step>'
-                + '</steps>');
+                + '    </obm-step>'
+                + '</obm-steps>');
         var elementCompiled = $compile(element)(scope);
         $rootScope.$digest();
         return elementCompiled;

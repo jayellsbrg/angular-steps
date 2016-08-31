@@ -15,7 +15,7 @@
 
     angular.module('angular-steps', ['templates-angular-steps']);
 
-    angular.module('angular-steps').directive('step', function () {
+    angular.module('angular-steps').directive('obmStep', function () {
         return {
             restrict: 'EA',
             replace: true,
@@ -23,7 +23,7 @@
             scope: {
                 name: '@'
             },
-            require: '^steps',
+            require: '^obmSteps',
             templateUrl: function (element, attributes) {
                 return attributes.template || 'step.html';
             },
@@ -33,7 +33,7 @@
         };
     });
 
-    angular.module('angular-steps').directive('steps', function () {
+    angular.module('angular-steps').directive('obmSteps', function () {
         return {
             restrict: 'EA',
             replace: true,
@@ -138,7 +138,7 @@
                 return {
                     restrict: 'A',
                     replace: false,
-                    require: '^steps',
+                    require: '^obmSteps',
                     link: function ($scope, $element, $attrs, steps) {
                         $element.on('click', function (e) {
                             e.preventDefault();
